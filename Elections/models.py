@@ -6,8 +6,12 @@ from django.utils import timezone
 
 # Create your models here.
 class VoterInfo(models.Model):
-    voterCardNo = models.CharField(max_length = 30)
-    aadharCardNo = models.IntegerField(max_length = 12)
+    voterCardNo = models.CharField(
+        max_length = 30,
+        primary_key = True)
+    aadharCardNo = models.IntegerField(
+        max_length = 12,
+        unique = True)
     state = models.CharField(max_length = 25)
 
     class Meta:
